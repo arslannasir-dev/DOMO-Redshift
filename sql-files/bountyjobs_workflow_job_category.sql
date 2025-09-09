@@ -1,0 +1,6 @@
+SELECT ID,NAME,PARENT_ID,PARENT_NAME,TOP_DISPLAY_NAME AS PARENT_CATEGORY,
+CASE
+    WHEN PARENT_ID = 1 THEN 'None Selected'
+    ELSE NAME
+END AS CHILD_CATEGORY
+FROM bounty_jobs_enhanced.bountyjobs_sql_job_category

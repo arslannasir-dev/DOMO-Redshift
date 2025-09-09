@@ -1,0 +1,17 @@
+SELECT
+       C.COMPANY_ID,
+       A.ADDRESS_ID,
+       A.ADDRESS_1,
+       A.ADDRESS_2,
+       A.CREATED_BY,
+       A.CREATION_DATE,
+       A.MODIFIED_BY,
+       A.MODIFIED_DATE,
+       A.POSTAL_CODE,
+       A.CITY,
+       A.STATE,
+       A.COUNTRY,
+       AT2.DESCRIPTION AS ADDRESS_TYPE
+FROM bounty_jobs.ADDRESS A
+JOIN bounty_jobs.COMPANY C ON C.COMPANY_ID = A.PARTY_ID
+JOIN bounty_jobs.ADDRESS_TYPE AT2 on A.ADDRESS_TYPE_CODE = AT2.CODE;
